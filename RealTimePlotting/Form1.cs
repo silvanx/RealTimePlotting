@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace RealTimePlotting
 {
@@ -14,10 +15,12 @@ namespace RealTimePlotting
     {
 
         public bool isPlottingActive = false;
+        Queue<float> sensorData = new Queue<float>();
 
         public Form1()
         {
             InitializeComponent();
+            RandomDataRadio.Select();
         }
 
         private void StartPlottingButton_Click(object sender, EventArgs e)
@@ -34,14 +37,16 @@ namespace RealTimePlotting
                 StopPlottingButton.Enabled = true;
                 SaveToFileCheckBox.Enabled = false;
                 SelectPlottingSamplingComboBox.Enabled = false;
-                SelectWritingSamplingComboBox.Enabled = false;
+                SelectWriteSamplingComboBox.Enabled = false;
+                SelectPollSamplingComboBox.Enabled = false;
             } else
             {
                 StartPlottingButton.Enabled = true;
                 StopPlottingButton.Enabled = false;
                 SaveToFileCheckBox.Enabled = true;
                 SelectPlottingSamplingComboBox.Enabled = true;
-                SelectWritingSamplingComboBox.Enabled = true;
+                SelectWriteSamplingComboBox.Enabled = true;
+                SelectPollSamplingComboBox.Enabled = true;
             }
 
         }

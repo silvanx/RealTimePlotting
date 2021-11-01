@@ -38,11 +38,16 @@ namespace RealTimePlotting
             this.StopPlottingButton = new System.Windows.Forms.Button();
             this.SaveToFileCheckBox = new System.Windows.Forms.CheckBox();
             this.SelectPlottingSamplingComboBox = new System.Windows.Forms.ComboBox();
-            this.SelectWritingSamplingComboBox = new System.Windows.Forms.ComboBox();
+            this.SelectWriteSamplingComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.RandomDataRadio = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.SelectPollSamplingComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.MainChart)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainChart
@@ -60,7 +65,7 @@ namespace RealTimePlotting
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.MainChart.Series.Add(series1);
-            this.MainChart.Size = new System.Drawing.Size(700, 440);
+            this.MainChart.Size = new System.Drawing.Size(700, 498);
             this.MainChart.TabIndex = 0;
             this.MainChart.Text = "chart1";
             // 
@@ -70,15 +75,15 @@ namespace RealTimePlotting
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.MainChart);
-            this.panel1.Location = new System.Drawing.Point(10, 95);
+            this.panel1.Location = new System.Drawing.Point(10, 37);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 440);
+            this.panel1.Size = new System.Drawing.Size(700, 498);
             this.panel1.TabIndex = 1;
             // 
             // StartPlottingButton
             // 
-            this.StartPlottingButton.Location = new System.Drawing.Point(10, 12);
+            this.StartPlottingButton.Location = new System.Drawing.Point(10, 9);
             this.StartPlottingButton.Name = "StartPlottingButton";
             this.StartPlottingButton.Size = new System.Drawing.Size(75, 23);
             this.StartPlottingButton.TabIndex = 2;
@@ -89,7 +94,7 @@ namespace RealTimePlotting
             // StopPlottingButton
             // 
             this.StopPlottingButton.Enabled = false;
-            this.StopPlottingButton.Location = new System.Drawing.Point(91, 12);
+            this.StopPlottingButton.Location = new System.Drawing.Point(91, 9);
             this.StopPlottingButton.Name = "StopPlottingButton";
             this.StopPlottingButton.Size = new System.Drawing.Size(75, 23);
             this.StopPlottingButton.TabIndex = 3;
@@ -100,7 +105,7 @@ namespace RealTimePlotting
             // SaveToFileCheckBox
             // 
             this.SaveToFileCheckBox.AutoSize = true;
-            this.SaveToFileCheckBox.Location = new System.Drawing.Point(172, 16);
+            this.SaveToFileCheckBox.Location = new System.Drawing.Point(172, 13);
             this.SaveToFileCheckBox.Name = "SaveToFileCheckBox";
             this.SaveToFileCheckBox.Size = new System.Drawing.Size(79, 17);
             this.SaveToFileCheckBox.TabIndex = 4;
@@ -109,24 +114,27 @@ namespace RealTimePlotting
             // 
             // SelectPlottingSamplingComboBox
             // 
+            this.SelectPlottingSamplingComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SelectPlottingSamplingComboBox.FormattingEnabled = true;
-            this.SelectPlottingSamplingComboBox.Location = new System.Drawing.Point(91, 41);
+            this.SelectPlottingSamplingComboBox.Location = new System.Drawing.Point(812, 99);
             this.SelectPlottingSamplingComboBox.Name = "SelectPlottingSamplingComboBox";
             this.SelectPlottingSamplingComboBox.Size = new System.Drawing.Size(121, 21);
             this.SelectPlottingSamplingComboBox.TabIndex = 5;
             // 
-            // SelectWritingSamplingComboBox
+            // SelectWriteSamplingComboBox
             // 
-            this.SelectWritingSamplingComboBox.FormattingEnabled = true;
-            this.SelectWritingSamplingComboBox.Location = new System.Drawing.Point(91, 69);
-            this.SelectWritingSamplingComboBox.Name = "SelectWritingSamplingComboBox";
-            this.SelectWritingSamplingComboBox.Size = new System.Drawing.Size(121, 21);
-            this.SelectWritingSamplingComboBox.TabIndex = 6;
+            this.SelectWriteSamplingComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SelectWriteSamplingComboBox.FormattingEnabled = true;
+            this.SelectWriteSamplingComboBox.Location = new System.Drawing.Point(812, 127);
+            this.SelectWriteSamplingComboBox.Name = "SelectWriteSamplingComboBox";
+            this.SelectWriteSamplingComboBox.Size = new System.Drawing.Size(121, 21);
+            this.SelectWriteSamplingComboBox.TabIndex = 6;
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 44);
+            this.label1.Location = new System.Drawing.Point(728, 102);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 7;
@@ -134,21 +142,66 @@ namespace RealTimePlotting
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 72);
+            this.label2.Location = new System.Drawing.Point(728, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Write frequency";
+            // 
+            // RandomDataRadio
+            // 
+            this.RandomDataRadio.AutoSize = true;
+            this.RandomDataRadio.Location = new System.Drawing.Point(6, 19);
+            this.RandomDataRadio.Name = "RandomDataRadio";
+            this.RandomDataRadio.Size = new System.Drawing.Size(89, 17);
+            this.RandomDataRadio.TabIndex = 9;
+            this.RandomDataRadio.TabStop = true;
+            this.RandomDataRadio.Text = "Random data";
+            this.RandomDataRadio.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.RandomDataRadio);
+            this.groupBox1.Location = new System.Drawing.Point(769, 9);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(164, 47);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Data Source";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(728, 157);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Poll frequency";
+            // 
+            // SelectPollSamplingComboBox
+            // 
+            this.SelectPollSamplingComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.SelectPollSamplingComboBox.FormattingEnabled = true;
+            this.SelectPollSamplingComboBox.Location = new System.Drawing.Point(812, 154);
+            this.SelectPollSamplingComboBox.Name = "SelectPollSamplingComboBox";
+            this.SelectPollSamplingComboBox.Size = new System.Drawing.Size(121, 21);
+            this.SelectPollSamplingComboBox.TabIndex = 11;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(945, 547);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.SelectPollSamplingComboBox);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.SelectWritingSamplingComboBox);
+            this.Controls.Add(this.SelectWriteSamplingComboBox);
             this.Controls.Add(this.SelectPlottingSamplingComboBox);
             this.Controls.Add(this.SaveToFileCheckBox);
             this.Controls.Add(this.StopPlottingButton);
@@ -159,6 +212,8 @@ namespace RealTimePlotting
             this.Text = "Real Time Plotting";
             ((System.ComponentModel.ISupportInitialize)(this.MainChart)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,9 +227,13 @@ namespace RealTimePlotting
         private System.Windows.Forms.Button StopPlottingButton;
         private System.Windows.Forms.CheckBox SaveToFileCheckBox;
         private System.Windows.Forms.ComboBox SelectPlottingSamplingComboBox;
-        private System.Windows.Forms.ComboBox SelectWritingSamplingComboBox;
+        private System.Windows.Forms.ComboBox SelectWriteSamplingComboBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton RandomDataRadio;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox SelectPollSamplingComboBox;
     }
 }
 
